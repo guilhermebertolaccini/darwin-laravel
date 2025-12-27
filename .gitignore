@@ -42,3 +42,9 @@ logo-metacare.png
 node_modules
 node_modules
 /storage/media-library/**/*
+/storage/framework/cache/**/*
+/storage/framework/sessions/**/*
+/storage/framework/views/**/*
+/storage/logs/**/*
+/public/storage
+/public/media
