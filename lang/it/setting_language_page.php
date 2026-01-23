@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'lbl_language' => 'Opzioni lingua',
+    'lbl_file' => 'Seleziona file da tradurre',
+    'lbl_key' => 'Chiave',
+    'lbl_value' => 'Valore',
+    'lbl_timezone' => 'Fuso orario',
+    'lbl_data_table_limit' => 'Limiti DataTable',
+    'lbl_currency' => 'Valuta',
+    'soon' => 'Presto',
+    'lbl_body_chart' => 'Mappa corpo',
+    'lbl_theme_mode' => 'Tema',
+    'Menubar_position' => 'Posizione menu',
+    'lbl_image_handling' => 'Seleziona tipo immagine',
+    'lbl_menu_items' => 'Menu',
+    'btn_add_new_images' => 'Aggiungi template immagine',
+    'tbl_header_name' => 'Nome',
+    'tbl_header_image' => 'Immagine',
+    'tbl_header_default' => 'Predefinito',
+    'tbl_header_action' => 'Azione',
+    'image_template_section_title' => 'Template immagine',
+    'lbl_default' => 'Predefinito',
+    'btn_remove' => 'Rimuovi',
+    'lbl_date_formate' => 'Formato data',
+    'lbl_time_formate' => 'Formato ora',
+];

@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Confirmation_vue_vue_type_template_id_1e8a3cd9_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Confirmation.vue?vue&type=template&id=1e8a3cd9&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/Confirmation.vue?vue&type=template&id=1e8a3cd9&scoped=true");
 /* harmony import */ var _Confirmation_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Confirmation.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/Confirmation.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _Confirmation_vue_vue_type_style_index_0_id_1e8a3cd9_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Confirmation.vue?vue&type=style&index=0&id=1e8a3cd9&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/Confirmation.vue?vue&type=style&index=0&id=1e8a3cd9&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Confirmation_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Confirmation_vue_vue_type_template_id_1e8a3cd9_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1e8a3cd9"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/Confirmation.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Confirmation_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Confirmation_vue_vue_type_template_id_1e8a3cd9_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1e8a3cd9"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/Confirmation.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -120,7 +120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ConfirmationDetail_vue_vue_type_template_id_00d5a7ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ConfirmationDetail.vue?vue&type=template&id=00d5a7ec&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/ConfirmationDetail.vue?vue&type=template&id=00d5a7ec&scoped=true");
 /* harmony import */ var _ConfirmationDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ConfirmationDetail.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/ConfirmationDetail.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _ConfirmationDetail_vue_vue_type_style_index_0_id_00d5a7ec_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ConfirmationDetail.vue?vue&type=style&index=0&id=00d5a7ec&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/ConfirmationDetail.vue?vue&type=style&index=0&id=00d5a7ec&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -128,7 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ConfirmationDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ConfirmationDetail_vue_vue_type_template_id_00d5a7ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-00d5a7ec"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/ConfirmationDetail.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_ConfirmationDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ConfirmationDetail_vue_vue_type_template_id_00d5a7ec_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-00d5a7ec"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/ConfirmationDetail.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -195,13 +195,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _CustomerDetail_vue_vue_type_template_id_802ff31a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CustomerDetail.vue?vue&type=template&id=802ff31a */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/CustomerDetail.vue?vue&type=template&id=802ff31a");
 /* harmony import */ var _CustomerDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CustomerDetail.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/CustomerDetail.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_CustomerDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_CustomerDetail_vue_vue_type_template_id_802ff31a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/CustomerDetail.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_CustomerDetail_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_CustomerDetail_vue_vue_type_template_id_802ff31a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/CustomerDetail.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -255,13 +255,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _EmailVerification_vue_vue_type_template_id_46879c3a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EmailVerification.vue?vue&type=template&id=46879c3a */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/EmailVerification.vue?vue&type=template&id=46879c3a");
 /* harmony import */ var _EmailVerification_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EmailVerification.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/EmailVerification.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EmailVerification_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EmailVerification_vue_vue_type_template_id_46879c3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/EmailVerification.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EmailVerification_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EmailVerification_vue_vue_type_template_id_46879c3a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/EmailVerification.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -316,7 +316,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectBranch_vue_vue_type_template_id_0ca65de2_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectBranch.vue?vue&type=template&id=0ca65de2&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectBranch.vue?vue&type=template&id=0ca65de2&scoped=true");
 /* harmony import */ var _SelectBranch_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectBranch.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectBranch.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectBranch_vue_vue_type_style_index_0_id_0ca65de2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectBranch.vue?vue&type=style&index=0&id=0ca65de2&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectBranch.vue?vue&type=style&index=0&id=0ca65de2&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -324,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectBranch_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectBranch_vue_vue_type_template_id_0ca65de2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0ca65de2"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectBranch.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectBranch_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectBranch_vue_vue_type_template_id_0ca65de2_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0ca65de2"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectBranch.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -392,7 +392,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectDateTime_vue_vue_type_template_id_1cebb95b_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectDateTime.vue?vue&type=template&id=1cebb95b&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectDateTime.vue?vue&type=template&id=1cebb95b&scoped=true");
 /* harmony import */ var _SelectDateTime_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectDateTime.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectDateTime.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectDateTime_vue_vue_type_style_index_0_id_1cebb95b_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectDateTime.vue?vue&type=style&index=0&id=1cebb95b&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectDateTime.vue?vue&type=style&index=0&id=1cebb95b&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -400,7 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectDateTime_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectDateTime_vue_vue_type_template_id_1cebb95b_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1cebb95b"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectDateTime.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectDateTime_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectDateTime_vue_vue_type_template_id_1cebb95b_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1cebb95b"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectDateTime.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -468,7 +468,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectService_vue_vue_type_template_id_52f2c525_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectService.vue?vue&type=template&id=52f2c525&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectService.vue?vue&type=template&id=52f2c525&scoped=true");
 /* harmony import */ var _SelectService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectService.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectService.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectService_vue_vue_type_style_index_0_id_52f2c525_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectService.vue?vue&type=style&index=0&id=52f2c525&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectService.vue?vue&type=style&index=0&id=52f2c525&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -476,7 +476,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectService_vue_vue_type_template_id_52f2c525_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-52f2c525"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectService.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectService_vue_vue_type_template_id_52f2c525_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-52f2c525"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectService.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -544,7 +544,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectStaff_vue_vue_type_template_id_1f4169d0_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectStaff.vue?vue&type=template&id=1f4169d0&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectStaff.vue?vue&type=template&id=1f4169d0&scoped=true");
 /* harmony import */ var _SelectStaff_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectStaff.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectStaff.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectStaff_vue_vue_type_style_index_0_id_1f4169d0_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectStaff.vue?vue&type=style&index=0&id=1f4169d0&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectStaff.vue?vue&type=style&index=0&id=1f4169d0&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -552,7 +552,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectStaff_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectStaff_vue_vue_type_template_id_1f4169d0_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1f4169d0"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectStaff.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectStaff_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectStaff_vue_vue_type_template_id_1f4169d0_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-1f4169d0"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectStaff.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -620,7 +620,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectSystemService_vue_vue_type_template_id_0b6bf576_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectSystemService.vue?vue&type=template&id=0b6bf576&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectSystemService.vue?vue&type=template&id=0b6bf576&scoped=true");
 /* harmony import */ var _SelectSystemService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectSystemService.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectSystemService.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectSystemService_vue_vue_type_style_index_0_id_0b6bf576_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectSystemService.vue?vue&type=style&index=0&id=0b6bf576&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectSystemService.vue?vue&type=style&index=0&id=0b6bf576&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -628,7 +628,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectSystemService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectSystemService_vue_vue_type_template_id_0b6bf576_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0b6bf576"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectSystemService.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectSystemService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectSystemService_vue_vue_type_template_id_0b6bf576_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0b6bf576"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectSystemService.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -696,7 +696,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SelectsinglevendorService_vue_vue_type_template_id_041b2395_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectsinglevendorService.vue?vue&type=template&id=041b2395&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectsinglevendorService.vue?vue&type=template&id=041b2395&scoped=true");
 /* harmony import */ var _SelectsinglevendorService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectsinglevendorService.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectsinglevendorService.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _SelectsinglevendorService_vue_vue_type_style_index_0_id_041b2395_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectsinglevendorService.vue?vue&type=style&index=0&id=041b2395&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectsinglevendorService.vue?vue&type=style&index=0&id=041b2395&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -704,7 +704,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectsinglevendorService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectsinglevendorService_vue_vue_type_template_id_041b2395_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-041b2395"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectsinglevendorService.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_SelectsinglevendorService_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_SelectsinglevendorService_vue_vue_type_template_id_041b2395_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-041b2395"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/BookingComponent/SelectsinglevendorService.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -770,12 +770,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _NotFound_vue_vue_type_template_id_b9daeaf4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotFound.vue?vue&type=template&id=b9daeaf4 */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/NotFound.vue?vue&type=template&id=b9daeaf4");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_NotFound_vue_vue_type_template_id_b9daeaf4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/NotFound.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_NotFound_vue_vue_type_template_id_b9daeaf4__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/NotFound.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -814,7 +814,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _QuickBooking_vue_vue_type_template_id_0a63a9c3_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuickBooking.vue?vue&type=template&id=0a63a9c3&scoped=true */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/QuickBooking.vue?vue&type=template&id=0a63a9c3&scoped=true");
 /* harmony import */ var _QuickBooking_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuickBooking.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/QuickBooking.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _QuickBooking_vue_vue_type_style_index_0_id_0a63a9c3_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickBooking.vue?vue&type=style&index=0&id=0a63a9c3&scoped=true&lang=css */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/QuickBooking.vue?vue&type=style&index=0&id=0a63a9c3&scoped=true&lang=css");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -822,7 +822,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_QuickBooking_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_QuickBooking_vue_vue_type_template_id_0a63a9c3_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0a63a9c3"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/QuickBooking.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_QuickBooking_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_QuickBooking_vue_vue_type_template_id_0a63a9c3_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-0a63a9c3"],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/QuickBooking.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -889,13 +889,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _TabPanel_vue_vue_type_template_id_1ab61186__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TabPanel.vue?vue&type=template&id=1ab61186 */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/TabPanel.vue?vue&type=template&id=1ab61186");
 /* harmony import */ var _TabPanel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TabPanel.vue?vue&type=script&setup=true&lang=js */ "./Modules/QuickBooking/Resources/assets/js/quick-booking/TabPanel.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TabPanel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TabPanel_vue_vue_type_template_id_1ab61186__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/TabPanel.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_TabPanel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_TabPanel_vue_vue_type_template_id_1ab61186__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"Modules/QuickBooking/Resources/assets/js/quick-booking/TabPanel.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -96953,13 +96953,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _InputField_vue_vue_type_template_id_62e70041__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputField.vue?vue&type=template&id=62e70041 */ "./resources/js/vue/components/form-elements/InputField.vue?vue&type=template&id=62e70041");
 /* harmony import */ var _InputField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputField.vue?vue&type=script&setup=true&lang=js */ "./resources/js/vue/components/form-elements/InputField.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_var_www_html_health_wellness_dashboard_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_InputField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_InputField_vue_vue_type_template_id_62e70041__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/vue/components/form-elements/InputField.vue"]])
+const __exports__ = /*#__PURE__*/(0,_Users_tatica_Desktop_AMBIENTE_DEV_darwin_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_InputField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_InputField_vue_vue_type_template_id_62e70041__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/vue/components/form-elements/InputField.vue"]])
 /* hot reload */
 if (false) {}
 

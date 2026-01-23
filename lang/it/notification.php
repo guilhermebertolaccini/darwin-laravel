@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'title' => 'Notifiche',
+    'lbl_text' => 'Testo',
+    'lbl_module' => 'Modulo',
+    'lbl_update' => 'Aggiornato il',
+    'title_template' => 'Modelli notifiche',
+    'lbl_id' => 'ID',
+    'lbl_label' => 'Etichetta',
+    'lbl_type' => 'Tipo',
+    'lbl_status' => 'Stato',
+    'lbl_action' => 'Azione',
+    'lbl_to' => 'A',
+    'lbl_bcc' => 'Bcc',
+    'lbl_cc' => 'Cc',
+    'edit' => ' Modifica',
+    'parameters' => 'Parametri notifica',
+    'template' => 'Modello',
+    'lbl_customer' => 'Cliente',
+    'list' => 'Elenco',
+    'notification_deleted' => 'Notifica eliminata',
+    'lbl_patient' => 'Paziente',
+    'email_templates' => 'Modelli email',
+];
