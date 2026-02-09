@@ -129,14 +129,14 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('editbodychartview/{id}', [ClinicAppointmentController::class, 'editbodychartview'])->name("editbodychartview");
         Route::post('bodychart-bulk-action', [ClinicAppointmentController::class, 'bodychart_bulk_action'])->name('bodychart_bulk_action');
         Route::get('get-bodychart-details/{id}', [ClinicAppointmentController::class, 'getBodychartDetail'])->name('get_bodychart_details');
-        Route::get('bodychart_form/services/index_list', [ClinicsServiceController::class, 'index_list'])->name("index_list");
-        Route::get('bodychart_form/clinics/index_list', [ClinicesController::class, 'index_list'])->name('index_list');
-        Route::get('bodychart_form/customers/index_list', [CustomersController::class, 'index_list'])->name('index_list');
-        Route::get('bodychart_form/tax/index_list', [TaxesController::class, 'index_list'])->name('index_list');
+        Route::get('bodychart_form/services/index_list', [ClinicsServiceController::class, 'index_list'])->name("services.index_list");
+        Route::get('bodychart_form/clinics/index_list', [ClinicesController::class, 'index_list'])->name('clinics.index_list');
+        Route::get('bodychart_form/customers/index_list', [CustomersController::class, 'index_list'])->name('customers.index_list');
+        Route::get('bodychart_form/tax/index_list', [TaxesController::class, 'index_list'])->name('tax.index_list');
         Route::get('bodychart_form/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('bodychart_form.other_patientlist');
-        Route::get('bodychart_form/doctor/index_list', [DoctorController::class, 'index_list'])->name('index_list');
-        Route::get('bodychart_form/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('service_price');
-        Route::get('bodychart_form/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('availableSlot');
+        Route::get('bodychart_form/doctor/index_list', [DoctorController::class, 'index_list'])->name('doctor.index_list');
+        Route::get('bodychart_form/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('services.service_price');
+        Route::get('bodychart_form/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('doctor.availableSlot');
     });
     Route::get('google_connect', [AppointmentsController::class, 'joinGoogleMeet'])->name('google_connect');
     Route::get('zoom_connect', [AppointmentsController::class, 'joinZoomMeet'])->name('zoom_connect');
@@ -193,17 +193,14 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::post('update-without-pharma-prescription/{id}', [PatientEncounterController::class, 'updateWithoutPharmaPrescription']);
         Route::get('delete-without-pharma-prescription/{id}', [PatientEncounterController::class, 'deleteWithoutPharmaPrescription']);
 
-        Route::get('encounter-detail-page/services/index_list', [ClinicsServiceController::class, 'index_list'])->name("index_list");
-        Route::get('encounter-detail-page/clinics/index_list', [ClinicesController::class, 'index_list'])->name('index_list');
-        Route::get('encounter-detail-page/customers/index_list', [CustomersController::class, 'index_list'])->name('index_list');
-        Route::get('encounter-detail-page/tax/index_list', [TaxesController::class, 'index_list'])->name('index_list');
+        Route::get('encounter-detail-page/services/index_list', [ClinicsServiceController::class, 'index_list'])->name("encounter_detail.services.index_list");
+        Route::get('encounter-detail-page/clinics/index_list', [ClinicesController::class, 'index_list'])->name('encounter_detail.clinics.index_list');
+        Route::get('encounter-detail-page/customers/index_list', [CustomersController::class, 'index_list'])->name('encounter_detail.customers.index_list');
+        Route::get('encounter-detail-page/tax/index_list', [TaxesController::class, 'index_list'])->name('encounter_detail.tax.index_list');
         Route::get('encounter-detail-page/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('encounter_detail.other_patientlist');
-        Route::get('encounter-detail-page/doctor/index_list', [DoctorController::class, 'index_list'])->name('index_list');
-        Route::get('encounter-detail-page/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('service_price');
-        Route::get('encounter-detail-page/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('availableSlot');
-
-        Route::get('get-template-data/{id}', [PatientEncounterController::class, 'getTemplateData'])->name('get-template-data');
-        Route::post('bulk-action', [PatientEncounterController::class, 'bulk_action'])->name('bulk_action');
+        Route::get('encounter-detail-page/doctor/index_list', [DoctorController::class, 'index_list'])->name('encounter_detail.doctor.index_list');
+        Route::get('encounter-detail-page/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('encounter_detail.services.service_price');
+        Route::get('encounter-detail-page/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('encounter_detail.doctor.availableSlot');
 
         // Bed allocation routes
         Route::get('edit-bed-allocation/{id}', [PatientEncounterController::class, 'editBedAllocation'])->name('edit-bed-allocation');
@@ -238,8 +235,6 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('get-template-detail/{id}', [EncounterTemplateController::class, 'getTemplateDetails']);
 
         Route::post('save-multiple-prescriptions', [EncounterTemplateController::class, 'saveMultiplePrescriptions'])->name('save-multiple-prescriptions');
-        Route::get('edit-prescription/{id}', [EncounterTemplateController::class, 'editPrescription'])->name('edit-prescription');
-        Route::post('update-prescription/{id}', [EncounterTemplateController::class, 'updatePrescription'])->name('update-prescription');
         Route::post('delete-prescription/{id}', [EncounterTemplateController::class, 'deletePrescription'])->name('deletePrescription');
         Route::post('bulk-delete-prescriptions', [EncounterTemplateController::class, 'bulkDeletePrescriptions'])->name('bulk-delete-prescriptions');
 
