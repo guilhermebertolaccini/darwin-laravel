@@ -17,6 +17,14 @@ php artisan config:cache || true
 # php artisan route:cache || true
 php artisan view:cache || true
 
+# Fix storage permissions explicitly
+touch storage/logs/laravel.log
+chmod -R 777 storage
+chown -R www-data:www-data storage
+
+# Stream laravel.log to stdout so we can see errors in Coolify logs
+tail -f storage/logs/laravel.log &
+
 # Start Nginx in background
 nginx
 

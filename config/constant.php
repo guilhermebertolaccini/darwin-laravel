@@ -32,11 +32,11 @@ return [
             'module_name' => 'bed_type',
             'is_custom_permission' => 0,
         ],
-          [
+        [
             'module_name' => 'bed_master',
             'is_custom_permission' => 0,
         ],
-          [
+        [
             'module_name' => 'allocations',
             'is_custom_permission' => 0,
         ],
@@ -105,7 +105,7 @@ return [
         [
             'module_name' => 'Setting',
             'type' => '',
-            'more_permission' => ['bussiness', 'misc', 'quick_booking','other_setting', 'custom_code', 'customization', 'mail', 'notification', 'intigrations', 'custom_fields', 'currency', 'commission', 'holiday', 'doctor_holiday', 'payment_method', 'language', 'menu_builder', 'invoice','body_chart', 'telemed_service','module','cancellation_charge'],
+            'more_permission' => ['bussiness', 'misc', 'quick_booking', 'other_setting', 'custom_code', 'customization', 'mail', 'notification', 'intigrations', 'custom_fields', 'currency', 'commission', 'holiday', 'doctor_holiday', 'payment_method', 'language', 'menu_builder', 'invoice', 'body_chart', 'telemed_service', 'module', 'cancellation_charge'],
             'is_custom_permission' => 0,
         ],
         [
@@ -270,11 +270,11 @@ return [
             'type' => 'pharmacy',
             'is_custom_permission' => 0,
         ],
-        [
-            'module_name' => 'Pharma',
-            'type' => 'pharmacy',
-            'is_custom_permission' => 0,
-        ],
+        // [
+        //     'module_name' => 'Pharma',
+        //     'type' => 'pharmacy',
+        //     'is_custom_permission' => 0,
+        // ],
         [
             'module_name' => 'Suppliers',
             'type' => 'pharmacy',
@@ -290,16 +290,16 @@ return [
         //     'type' => 'pharmacy',
         //     'is_custom_permission' => 0,
         // ],
-        [
-            'module_name' => 'Pharma Billing record',
-            'type' => 'pharmacy',
-            'is_custom_permission' => 0,
-        ],
-        [
-            'module_name' => 'Pharma Payout',
-            'type' => 'pharmacy',
-            'is_custom_permission' => 0,
-        ],
+        // [
+        //     'module_name' => 'Pharma Billing record',
+        //     'type' => 'pharmacy',
+        //     'is_custom_permission' => 0,
+        // ],
+        // [
+        //     'module_name' => 'Pharma Payout',
+        //     'type' => 'pharmacy',
+        //     'is_custom_permission' => 0,
+        // ],
         // [
         //     'module_name' => 'Commission',
         //     'type' => 'pharmacy',
