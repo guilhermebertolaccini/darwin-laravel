@@ -112,7 +112,7 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('clinicAppointmentDetail/clinics/index_list', [ClinicesController::class, 'index_list'])->name('clinicAppointmentDetail.clinics.index_list');
         Route::get('clinicAppointmentDetail/customers/index_list', [CustomersController::class, 'index_list'])->name('clinicAppointmentDetail.customers.index_list');
         Route::get('clinicAppointmentDetail/tax/index_list', [TaxesController::class, 'index_list'])->name('clinicAppointmentDetail.tax.index_list');
-        Route::get('clinicAppointmentDetail/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('other_patientlist');
+        Route::get('clinicAppointmentDetail/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('clinicAppointmentDetail.other_patientlist');
         Route::get('clinicAppointmentDetail/doctor/index_list', [DoctorController::class, 'index_list'])->name('clinicAppointmentDetail.doctor.index_list');
         Route::get('clinicAppointmentDetail/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('clinicAppointmentDetail.services.service_price');
         Route::get('clinicAppointmentDetail/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('clinicAppointmentDetail.doctor.availableSlot');
@@ -133,7 +133,7 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('bodychart_form/clinics/index_list', [ClinicesController::class, 'index_list'])->name('index_list');
         Route::get('bodychart_form/customers/index_list', [CustomersController::class, 'index_list'])->name('index_list');
         Route::get('bodychart_form/tax/index_list', [TaxesController::class, 'index_list'])->name('index_list');
-        Route::get('bodychart_form/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('other_patientlist');
+        Route::get('bodychart_form/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('bodychart_form.other_patientlist');
         Route::get('bodychart_form/doctor/index_list', [DoctorController::class, 'index_list'])->name('index_list');
         Route::get('bodychart_form/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('service_price');
         Route::get('bodychart_form/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('availableSlot');
@@ -197,7 +197,7 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('encounter-detail-page/clinics/index_list', [ClinicesController::class, 'index_list'])->name('index_list');
         Route::get('encounter-detail-page/customers/index_list', [CustomersController::class, 'index_list'])->name('index_list');
         Route::get('encounter-detail-page/tax/index_list', [TaxesController::class, 'index_list'])->name('index_list');
-        Route::get('encounter-detail-page/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('other_patientlist');
+        Route::get('encounter-detail-page/appointment/other-patientlist', [AppointmentsController::class, 'otherpatientlist'])->name('encounter_detail.other_patientlist');
         Route::get('encounter-detail-page/doctor/index_list', [DoctorController::class, 'index_list'])->name('index_list');
         Route::get('encounter-detail-page/services/service-price', [ClinicsServiceController::class, 'service_price'])->name('service_price');
         Route::get('encounter-detail-page/doctor/get-available-slot', [DoctorController::class, 'availableSlot'])->name('availableSlot');
