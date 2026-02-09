@@ -89,7 +89,6 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
 
         Route::get("index_patientdata", [ClinicAppointmentController::class, 'index_patientdata'])->name("index_patientdata");
         Route::get('clinicAppointmentDetail/{id}', [ClinicAppointmentController::class, 'appointmentDetail'])->name('clinicAppointmentDetail');
-        Route::get('patient_list/{id}', [ClinicAppointmentController::class, 'patientDeatails'])->name('patientDeatails');
         Route::get('invoice_detail', [ClinicAppointmentController::class, 'invoice_detail'])->name('invoice_detail');
         Route::get('download_invoice', [ClinicAppointmentController::class, 'downloadPDf'])->name('download_invoice');
         Route::post('bulk-action', [ClinicAppointmentController::class, 'bulk_action'])->name('bulk_action');
