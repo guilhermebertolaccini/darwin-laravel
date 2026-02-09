@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Product\Http\Controllers\backend\API;
+namespace Modules\Product\Http\Controllers\Backend\API;
 
 use Auth;
 use Illuminate\Http\Request;
@@ -20,10 +20,10 @@ class CartController extends Controller
         $perPage = $request->input('per_page', 10);
 
         $cart = Cart::where('user_id', $user_id)
-        ->with('product', 'product_variation')
-        ->whereHas('product', function ($query) {
-            $query->whereNotNull('id');
-        });
+            ->with('product', 'product_variation')
+            ->whereHas('product', function ($query) {
+                $query->whereNotNull('id');
+            });
 
         $cart = $cart->paginate($perPage);
 
@@ -63,7 +63,7 @@ class CartController extends Controller
 
         $product = Product::where('id', $data['product_id'])->first();
 
-        if (! $product) {
+        if (!$product) {
             $message = __('product.product_not_found');
 
             return response()->json(['message' => $message, 'status' => true], 200);
@@ -86,7 +86,7 @@ class CartController extends Controller
 
         $cart = Cart::where('id', $cart_id)->first();
 
-        if (! $cart) {
+        if (!$cart) {
             $message = __('product.cart_not_found');
 
             return response()->json(['message' => $message, 'status' => true], 200);
@@ -111,7 +111,7 @@ class CartController extends Controller
             $get_total_stock = $product_variation->product_variation_stock->stock_qty;
 
             if ($qty >= $get_total_stock) {
-                $message = 'Only '.$get_total_stock.' Quantity is available';
+                $message = 'Only ' . $get_total_stock . ' Quantity is available';
 
                 return response()->json(['message' => $message, 'status' => true], 200);
             } elseif ($qty < $get_total_stock) {
