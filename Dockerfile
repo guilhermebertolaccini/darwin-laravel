@@ -47,6 +47,6 @@ COPY docker/nginx/default.conf /etc/nginx/sites-available/default
 COPY docker/run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
 
-EXPOSE 80
+EXPOSE 8000
 
 ENTRYPOINT ["/usr/local/bin/run.sh"]
