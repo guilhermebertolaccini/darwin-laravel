@@ -2,6 +2,10 @@
 
 cd /var/www/html
 
+# Check for critical extensions
+php -m | grep -q curl || echo "❌ CRITICAL: PHP curl extension is MISSING"
+php -m | grep -q soap || echo "❌ CRITICAL: PHP soap extension is MISSING"
+
 # Clear caches if they exist
 php artisan optimize:clear
 
