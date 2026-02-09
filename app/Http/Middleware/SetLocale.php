@@ -15,8 +15,13 @@ class SetLocale
     public function handle($request, Closure $next)
     {
 
-        if (! session()->has('locale')) {
-            session()->put('locale', setting('default_language','en'));
+        if (!session()->has('locale')) {
+            try {
+                session()->put('locale', setting('default_language', 'en'));
+            } catch (\Exception $e) {
+                // If database is not ready or settings table is missing, fallback to 'en'
+                session()->put('locale', 'en');
+            }
         }
 
         app()->setLocale(session()->get('locale'));
