@@ -47,6 +47,10 @@ COPY docker/nginx/default.conf /etc/nginx/sites-available/default
 COPY docker/run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
 
+# Forward Nginx logs to Docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+    && ln -sf /dev/stderr /var/log/nginx/error.log
+
 EXPOSE 8000
 
 ENTRYPOINT ["/usr/local/bin/run.sh"]
