@@ -122,16 +122,13 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
     Route::group(['prefix' => 'bodychart', 'as' => 'bodychart.'], function () {
         Route::get('bodychart_datatable/{id}', [ClinicAppointmentController::class, 'bodychart_datatable'])->name("bodychart_datatable");
         Route::delete('bodychartdestroy/{id}', [ClinicAppointmentController::class, 'bodychartdestroy'])->name("bodychartdestroy");
-        Route::get("bodychart_image_list", [ClinicAppointmentController::class, 'bodychart_image_list'])->name("patient-record");
         Route::put("bodychart_form/appointment_bodychart/{id}", [ClinicAppointmentController::class, 'appointment_bodychart'])->name("appointment_bodychart");
         Route::get("bodychart_form/{id}/appointment_bodychart_data", [ClinicAppointmentController::class, 'appointment_bodychart_data'])->name("appointment_bodychart ");
         Route::get("bodychart_form/{id}/bodychart_templatedata", [ClinicAppointmentController::class, 'bodychart_templatedata'])->name("bodychart_templatedata");
-        Route::get("bodychart_form/bodychart_image_list", [ClinicAppointmentController::class, 'bodychart_image_list'])->name("patient-record");
         Route::get('bodychart_form/{id}', [ClinicAppointmentController::class, 'bodychart_form'])->name("bodychart_form");
         Route::put("editbodychartview/appointment_upadtebodychart/{id}", [ClinicAppointmentController::class, 'appointment_upadtebodychart'])->name("appointment_upadtebodychart");
         Route::get("editbodychartview/{id}/bodychart_templatedata", [ClinicAppointmentController::class, 'bodychart_templatedata'])->name("bodychart_templatedata");
         Route::get("editbodychartview/{id}/appointment_bodychart_data", [ClinicAppointmentController::class, 'appointment_bodychart_data'])->name("appointment_bodychart ");
-        Route::get("editbodychartview/bodychart_image_list", [ClinicAppointmentController::class, 'bodychart_image_list'])->name("patient-record");
         Route::get('editbodychartview/{id}', [ClinicAppointmentController::class, 'editbodychartview'])->name("editbodychartview");
         Route::post('bodychart-bulk-action', [ClinicAppointmentController::class, 'bodychart_bulk_action'])->name('bodychart_bulk_action');
         Route::get('get-bodychart-details/{id}', [ClinicAppointmentController::class, 'getBodychartDetail'])->name('get_bodychart_details');
