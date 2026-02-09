@@ -85,7 +85,6 @@ Route::group(['prefix' => 'app', 'as' => 'backend.', 'middleware' => ['auth', 'a
         Route::get('patient_list', [ClinicAppointmentController::class, 'patient_list'])->name('patient_list');
         Route::get('patient_list.export', [ClinicAppointmentController::class, 'patientListExport'])->name('patient_list.export');
         Route::get('appointment-details/{id}', [ClinicAppointmentController::class, 'patientDeatails'])->name('patientDeatails');
-        Route::get('{id}/appointment_patient_data', [ClinicAppointmentController::class, 'appointment_patient_data']);
         Route::post('appointment_patient/{id}', [ClinicAppointmentController::class, 'appointment_patient'])->name('appointments.appointment_patient');
 
         Route::get("index_patientdata", [ClinicAppointmentController::class, 'index_patientdata'])->name("index_patientdata");
