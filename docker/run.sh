@@ -9,7 +9,8 @@ php artisan optimize:clear
 # We use || true to ensure container starts even if this fails due to missing DB connection initially
 php artisan package:discover || true
 php artisan config:cache || true
-php artisan route:cache || true
+# Route caching disabled - project has duplicate route names across modules
+# php artisan route:cache || true
 php artisan view:cache || true
 
 # Start Nginx in background
