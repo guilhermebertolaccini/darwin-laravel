@@ -13,17 +13,13 @@ php artisan optimize:clear
 # We use || true to ensure container starts even if this fails due to missing DB connection initially
 php artisan package:discover || true
 php artisan config:cache || true
+# Force Laravel to log to stderr so errors show up in Coolify logs
+export LOG_CHANNEL=stderr
+export LOG_DEPRECATIONS_CHANNEL=null
+
 # Route caching disabled - project has duplicate route names across modules
 # php artisan route:cache || true
 php artisan view:cache || true
-
-# Fix storage permissions explicitly
-touch storage/logs/laravel.log
-chmod -R 777 storage
-chown -R www-data:www-data storage
-
-# Stream laravel.log to stdout so we can see errors in Coolify logs
-tail -f storage/logs/laravel.log &
 
 # Start Nginx in background
 nginx
