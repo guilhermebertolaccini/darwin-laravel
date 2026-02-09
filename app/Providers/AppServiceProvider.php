@@ -23,7 +23,9 @@ class AppServiceProvider extends ServiceProvider
                 $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
                 $this->app->register(TelescopeServiceProvider::class);
             }
-            $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            if (class_exists(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class)) {
+                $this->app->register(\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class);
+            }
         }
     }
 

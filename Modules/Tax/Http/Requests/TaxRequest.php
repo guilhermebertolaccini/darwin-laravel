@@ -4,7 +4,7 @@ namespace Modules\Tax\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class taxRequest extends FormRequest
+class TaxRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -17,7 +17,7 @@ class taxRequest extends FormRequest
         switch (strtolower($this->getMethod())) {
             case 'post':
                 return [
-                    'title' => 'required|string|unique:taxes,title,'.$id,
+                    'title' => 'required|string|unique:taxes,title,' . $id,
                     'type' => 'required|string',
                     'value' => 'required',
                 ];

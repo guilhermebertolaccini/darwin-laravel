@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Service\Http\Controllers\backend;
+namespace Modules\Service\Http\Controllers\Backend;
 
 use App\Authorizable;
 use App\Models\User;
@@ -31,7 +31,7 @@ class SystemServiceCategoryController extends Controller
             'module_icon' => 'fa-regular fa-sun',
             'module_name' => $this->module_name,
         ]);
-        
+
     }
     /**
      * Display a listing of the resource.
@@ -69,7 +69,7 @@ class SystemServiceCategoryController extends Controller
 
         ];
         $export_url = route('backend.specializations.export');
-        
+
         if ($type === 'specialization') {
             $notification_data = [
                 'id' => $data->id,
@@ -78,7 +78,7 @@ class SystemServiceCategoryController extends Controller
                 'type' => $data->type,
                 'date' => Carbon::parse($data->updated_at)->format('d/m/Y'),
                 'vendor_id' => $data->vendor_id,
-                'vendor_name' => $data->vendor->first_name.' '.$data->vendor->last_name ?? 'unknown',
+                'vendor_name' => $data->vendor->first_name . ' ' . $data->vendor->last_name ?? 'unknown',
             ];
             sendNotificationOnBookingUpdate('accept_request_service', $notification_data);
         }
@@ -134,12 +134,12 @@ class SystemServiceCategoryController extends Controller
                 break;
         }
 
-        return response()->json(['status' => true, 'message' =>$message]);
+        return response()->json(['status' => true, 'message' => $message]);
     }
 
     public function update_status(Request $request, $id)
     {
-        $query =  SystemServiceCategory::where('id', $id);
+        $query = SystemServiceCategory::where('id', $id);
         $query->update(['status' => $request->status]);
 
         return response()->json(['status' => true, 'message' => __('clinic.status_update')]);
@@ -345,7 +345,7 @@ class SystemServiceCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->except('file_url','custom_fields_data');
+        $data = $request->except('file_url', 'custom_fields_data');
         $data['name'] = $request->name;
 
         $query = SystemServiceCategory::updateOrCreate($data);

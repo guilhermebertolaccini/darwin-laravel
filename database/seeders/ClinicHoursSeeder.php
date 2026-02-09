@@ -6,7 +6,7 @@ use Modules\ServiceProvider\Models\ServiceProvider;
 use Illuminate\Database\Seeder;
 use Modules\ClinicHour\Models\ClinicHour;
 
-class ClinicHourSeeder extends Seeder
+class ClinicHoursSeeder extends Seeder
 {
     public function run()
     {
