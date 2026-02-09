@@ -55,10 +55,11 @@ class TipServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            base_path('Modules/Tip/Config/config.php') => config_path($this->moduleNameLower.'.php'),
+            base_path('Modules/Tip/Config/config.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            base_path('Modules/Tip/Config/config.php'), $this->moduleNameLower
+            base_path('Modules/Tip/Config/config.php'),
+            $this->moduleNameLower
         );
     }
 
@@ -69,15 +70,17 @@ class TipServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/'.$this->moduleNameLower);
+        $viewPath = resource_path('views/modules/' . $this->moduleNameLower);
 
         $sourcePath = base_path('Modules/Tip/Resources/views');
 
-        $this->publishes([
-            $sourcePath => $viewPath,
-        ], ['views', $this->moduleNameLower.'-module-views']);
+        if (is_dir($sourcePath)) {
+            $this->publishes([
+                $sourcePath => $viewPath,
+            ], ['views', $this->moduleNameLower . '-module-views']);
 
-        $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
+            $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
+        }
     }
 
     /**
@@ -87,7 +90,7 @@ class TipServiceProvider extends ServiceProvider
      */
     public function registerTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__.'/../lang', 'tip');
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'tip');
     }
 
     /**
@@ -104,8 +107,8 @@ class TipServiceProvider extends ServiceProvider
     {
         $paths = [];
         foreach (Config::get('view.paths') as $path) {
-            if (is_dir($path.'/modules/'.$this->moduleNameLower)) {
-                $paths[] = $path.'/modules/'.$this->moduleNameLower;
+            if (is_dir($path . '/modules/' . $this->moduleNameLower)) {
+                $paths[] = $path . '/modules/' . $this->moduleNameLower;
             }
         }
 
@@ -120,11 +123,11 @@ class TipServiceProvider extends ServiceProvider
     protected function registerCommands($namespace = '')
     {
         $finder = new Finder(); // from Symfony\Component\Finder;
-        $finder->files()->name('*.php')->in(__DIR__.'/../Console');
+        $finder->files()->name('*.php')->in(__DIR__ . '/../Console');
 
         $classes = [];
         foreach ($finder as $file) {
-            $class = $namespace.'\\'.$file->getBasename('.php');
+            $class = $namespace . '\\' . $file->getBasename('.php');
             array_push($classes, $class);
         }
 

@@ -58,7 +58,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('get-revenue-chart-data', [AppointmentsController::class, 'getRevenuechartData']);
     Route::post("save-soap/{id}", [Modules\Appointment\Http\Controllers\Backend\ClinicAppointmentController::class, 'appointment_patient'])->name("appointment_patient");
     Route::get("get-soap/{id}", [Modules\Appointment\Http\Controllers\Backend\ClinicAppointmentController::class, 'appointment_patient_data'])->name("appointment_patient_data");
-    Route::put("save-appointment_patient/{id}", [Modules\Appointment\Http\Controllers\Backend\ClinicAppointmentController::class, 'appointment_patient'])->name("appointment_patient");
+    Route::put("save-appointment_patient/{id}", [Modules\Appointment\Http\Controllers\Backend\ClinicAppointmentController::class, 'appointment_patient'])->name("api.appointment_patient");
     Route::get("{id}/get_appointment_patient_data", [Modules\Appointment\Http\Controllers\Backend\ClinicAppointmentController::class, 'appointment_patient_data'])->name("appointment_patient_data");
 
     Route::post('/save-billing-items', [Modules\Appointment\Http\Controllers\Backend\BillingRecordController::class, 'saveBillingItems']);
