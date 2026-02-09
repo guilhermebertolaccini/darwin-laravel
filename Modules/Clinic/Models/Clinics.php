@@ -4,7 +4,7 @@ namespace Modules\Clinic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Clinic\Database\factories\ClinicFactory;
+// use Modules\Clinic\database\factories\ClinicFactory;
 use App\Trait\CustomFieldsTrait;
 use App\Models\BaseModel;
 use App\Models\User;
@@ -37,21 +37,21 @@ class Clinics extends BaseModel
     protected $table = 'clinic';
 
 
-    protected $fillable = ['slug','name','email','time_slot','system_service_category','description', 'address', 'city','state', 'country', 'pincode','vendor_id', 'contact_number', 'latitude','longitude','status'];
+    protected $fillable = ['slug', 'name', 'email', 'time_slot', 'system_service_category', 'description', 'address', 'city', 'state', 'country', 'pincode', 'vendor_id', 'contact_number', 'latitude', 'longitude', 'status'];
 
     protected $appends = ['file_url'];
 
 
-    protected static function newFactory(): ClinicFactory
-    {
-        //return ClinicFactory::new();
-    }
+    // protected static function newFactory(): ClinicFactory
+    // {
+    //     //return ClinicFactory::new();
+    // }
 
     protected function getFileUrlAttribute()
     {
         $media = $this->getFirstMediaUrl('file_url');
 
-        return isset($media) && ! empty($media) ? $media : default_file_url();
+        return isset($media) && !empty($media) ? $media : default_file_url();
     }
 
     protected static function boot()
@@ -65,11 +65,11 @@ class Clinics extends BaseModel
             $clinic->clinicgallery()->delete();
             $clinic->clinicappointment()->delete();
             $clinic->clinicdoctor()->delete();
-    
+
         });
     }
 
-   
+
     public function scopeSetVendor($query)
     {
         $vendorId = Auth::id();
@@ -78,88 +78,88 @@ class Clinics extends BaseModel
 
 
     public function scopeSetRole($query, $user)
-     {
+    {
         $user_id = $user->id;
 
 
-        
-        if(auth()->user()->hasRole(['admin', 'demo_admin'])) {
+
+        if (auth()->user()->hasRole(['admin', 'demo_admin'])) {
 
             if (multiVendor() == "0") {
-                
+
                 $user_ids = User::role(['admin', 'demo_admin'])->pluck('id');
-               
-                $query=$query->whereIn('vendor_id', $user_ids);
+
+                $query = $query->whereIn('vendor_id', $user_ids);
             }
-            return $query; 
-        }       
-        
-        if($user->hasRole('vendor')) {  
+            return $query;
+        }
 
-            $query=$query->where('vendor_id',  $user_id);
-            return $query; 
-         }
+        if ($user->hasRole('vendor')) {
 
-         if(auth()->user()->hasRole('doctor')) {
+            $query = $query->where('vendor_id', $user_id);
+            return $query;
+        }
 
-            if(multiVendor() == 0) {
+        if (auth()->user()->hasRole('doctor')) {
 
-                $doctor=Doctor::where('doctor_id',$user_id)->first();
+            if (multiVendor() == 0) {
 
-                $vendorId=$doctor->vendor_id;
+                $doctor = Doctor::where('doctor_id', $user_id)->first();
 
-                $query=$query->where('vendor_id',$vendorId)->where('status',1)->whereHas('clinicdoctor.doctor', function ($qry) use ($user_id) {
+                $vendorId = $doctor->vendor_id;
+
+                $query = $query->where('vendor_id', $vendorId)->where('status', 1)->whereHas('clinicdoctor.doctor', function ($qry) use ($user_id) {
 
                     $qry->where('doctor_id', $user_id);
 
-                    });
+                });
 
-            }else{
+            } else {
 
-             $query=$query->where('status',1)->whereHas('clinicdoctor.doctor', function ($qry) use ($user_id) {
+                $query = $query->where('status', 1)->whereHas('clinicdoctor.doctor', function ($qry) use ($user_id) {
                     $qry->where('doctor_id', $user_id);
-              });
+                });
 
-           }
+            }
 
-           return $query;
+            return $query;
         }
 
         if (auth()->user()->hasRole('receptionist')) {
 
-            if(multiVendor() == "0") {
+            if (multiVendor() == "0") {
 
-                $Receptionist=Receptionist::where('receptionist_id',$user_id)->first();
+                $Receptionist = Receptionist::where('receptionist_id', $user_id)->first();
 
-                $vendorId=$Receptionist->vendor_id;
-                
-                $query=$query->where('status',1)->where('vendor_id',$vendorId)->whereHas('receptionist', function ($qry) use ($user_id) {
+                $vendorId = $Receptionist->vendor_id;
+
+                $query = $query->where('status', 1)->where('vendor_id', $vendorId)->whereHas('receptionist', function ($qry) use ($user_id) {
                     $qry->where('receptionist_id', $user_id);
                 });
 
-            }else{
+            } else {
 
-               $query=$query->where('status',1)->whereHas('receptionist', function ($qry) use ($user_id) {
-                $qry->where('receptionist_id', $user_id);
-            });
-         }
+                $query = $query->where('status', 1)->whereHas('receptionist', function ($qry) use ($user_id) {
+                    $qry->where('receptionist_id', $user_id);
+                });
+            }
 
-         return $query;
-         
+            return $query;
+
         }
 
-         return $query;
-     }
+        return $query;
+    }
 
 
 
     public function vendor()
     {
-        return $this->belongsTo(User::class, 'vendor_id','id');
+        return $this->belongsTo(User::class, 'vendor_id', 'id');
     }
     public function specialty()
     {
-        return $this->belongsTo(SystemServiceCategory::class, 'system_service_category','id');
+        return $this->belongsTo(SystemServiceCategory::class, 'system_service_category', 'id');
     }
     public function countries()
     {
@@ -177,64 +177,72 @@ class Clinics extends BaseModel
     }
 
 
-    public function clinicsessions() {
+    public function clinicsessions()
+    {
 
-        return $this->hasMany( ClinicSession::class, 'clinic_id');
-         
+        return $this->hasMany(ClinicSession::class, 'clinic_id');
+
     }
 
-    public function clinicservices() {
+    public function clinicservices()
+    {
 
         return $this->hasMany(ClinicServiceMapping::class, 'clinic_id');
-         
+
     }
 
 
-    public function clinicgallery() {
+    public function clinicgallery()
+    {
 
-        return $this->hasMany( ClinicGallery::class, 'clinic_id');
-         
+        return $this->hasMany(ClinicGallery::class, 'clinic_id');
+
     }
 
-    public function clinicappointment() {
+    public function clinicappointment()
+    {
 
-        return $this->hasMany(Appointment::class, 'clinic_id')->with('appointmenttransaction','commissionsdata');
-         
-    }
-  
-   public function clinicdoctor() {
+        return $this->hasMany(Appointment::class, 'clinic_id')->with('appointmenttransaction', 'commissionsdata');
 
-      return $this->hasMany( DoctorClinicMapping::class, 'clinic_id');
-         
-    }
-    public function receptionist() {
-
-        return $this->hasOne( Receptionist::class, 'clinic_id');
-           
     }
 
-    public function doctorsessions() {
+    public function clinicdoctor()
+    {
 
-        return $this->hasMany( DoctorSession::class, 'clinic_id');
-         
+        return $this->hasMany(DoctorClinicMapping::class, 'clinic_id');
+
+    }
+    public function receptionist()
+    {
+
+        return $this->hasOne(Receptionist::class, 'clinic_id');
+
     }
 
-    public function clinicholiday() {
+    public function doctorsessions()
+    {
+
+        return $this->hasMany(DoctorSession::class, 'clinic_id');
+
+    }
+
+    public function clinicholiday()
+    {
         return $this->hasMany(Holiday::class, 'clinic_id');
     }
 
-    public function scopeCheckMultivendor($query){
-        if(multiVendor() == "0") {
-            $query = $query->where('status',1)->whereHas('vendor', function ($q){
-                $q->whereIn('user_type', ['admin','demo_admin']);
+    public function scopeCheckMultivendor($query)
+    {
+        if (multiVendor() == "0") {
+            $query = $query->where('status', 1)->whereHas('vendor', function ($q) {
+                $q->whereIn('user_type', ['admin', 'demo_admin']);
             });
-        }
-        else{
+        } else {
             $user = auth()->user() ?? null;
-            if($user == null) {
-                $query = $query->where('status',1);
+            if ($user == null) {
+                $query = $query->where('status', 1);
             }
-            
+
         }
     }
 }

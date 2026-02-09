@@ -4,7 +4,7 @@ namespace Modules\Clinic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Clinic\Database\factories\ClinicsCategoryFactory;
+// use Modules\Clinic\database\factories\ClinicsCategoryFactory;
 use App\Trait\CustomFieldsTrait;
 use App\Models\BaseModel;
 use Auth;
@@ -25,7 +25,7 @@ class ClinicsCategory extends BaseModel
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = ['slug','name','parent_id','description','vendor_id','featured','status'];
+    protected $fillable = ['slug', 'name', 'parent_id', 'description', 'vendor_id', 'featured', 'status'];
 
     protected $appends = ['file_url'];
 
@@ -36,15 +36,15 @@ class ClinicsCategory extends BaseModel
         'featured' => 'integer',
     ];
 
-    protected static function newFactory(): ClinicsCategoryFactory
-    {
-        //return ClinicsCategoryFactory::new();
-    }
+    // protected static function newFactory(): ClinicsCategoryFactory
+    // {
+    //     //return ClinicsCategoryFactory::new();
+    // }
 
 
     public function mainCategory()
     {
-        return $this->belongsTo(ClinicsCategory::class, 'parent_id','id');
+        return $this->belongsTo(ClinicsCategory::class, 'parent_id', 'id');
     }
 
 
@@ -75,7 +75,7 @@ class ClinicsCategory extends BaseModel
     {
         $media = $this->getFirstMediaUrl('file_url');
 
-        return isset($media) && ! empty($media) ? $media : default_file_url();
+        return isset($media) && !empty($media) ? $media : default_file_url();
     }
 
 

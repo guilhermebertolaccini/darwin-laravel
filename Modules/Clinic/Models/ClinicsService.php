@@ -4,7 +4,7 @@ namespace Modules\Clinic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Clinic\Database\factories\ClinicsServiceFactory;
+// use Modules\Clinic\database\factories\ClinicsServiceFactory;
 use App\Models\Traits\HasSlug;
 use App\Trait\CustomFieldsTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -52,10 +52,10 @@ class ClinicsService extends BaseModel
 
     const CUSTOM_FIELD_MODEL = 'Modules\Clinic\Models\ClinicsService';
 
-    protected static function newFactory(): ClinicsServiceFactory
-    {
-        //return ClinicsServiceFactory::new();
-    }
+    // protected static function newFactory(): ClinicsServiceFactory
+    // {
+    //     //return ClinicsServiceFactory::new();
+    // }
 
 
     public function category()
@@ -76,7 +76,7 @@ class ClinicsService extends BaseModel
     {
         $media = $this->getFirstMediaUrl('file_url');
 
-        return isset($media) && ! empty($media) ? $media : default_file_url();
+        return isset($media) && !empty($media) ? $media : default_file_url();
     }
 
 
@@ -145,7 +145,7 @@ class ClinicsService extends BaseModel
 
         if ($user->hasRole('vendor')) {
 
-            $query = $query->where('vendor_id',  $user_id)->withCount(['doctor_service']);
+            $query = $query->where('vendor_id', $user_id)->withCount(['doctor_service']);
             return $query;
         }
 

@@ -4,7 +4,7 @@ namespace Modules\Clinic\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Clinic\Database\factories\DoctorFactory;
+// use Modules\Clinic\database\factories\DoctorFactory;
 use App\Models\Traits\HasSlug;
 use App\Trait\CustomFieldsTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -29,7 +29,7 @@ class Doctor extends BaseModel
      * The attributes that are mass assignable.
      */
     protected $table = 'doctors';
-    protected $fillable = ['doctor_id','experience','signature','vendor_id'];
+    protected $fillable = ['doctor_id', 'experience', 'signature', 'vendor_id'];
     protected $casts = [
 
         'doctor_id' => 'integer',
@@ -37,10 +37,10 @@ class Doctor extends BaseModel
         'vendor_id' => 'integer',
     ];
     const CUSTOM_FIELD_MODEL = 'Modules\Clinic\Models\Doctor';
-    protected static function newFactory(): DoctorFactory
-    {
-        //return DoctorFactory::new();
-    }
+    // protected static function newFactory(): DoctorFactory
+    // {
+    //     //return DoctorFactory::new();
+    // }
     public function clinicservices()
     {
         return $this->belongsTo(ClinicsService::class);
@@ -63,96 +63,96 @@ class Doctor extends BaseModel
     }
     public function doctorService()
     {
-        return $this->hasMany(DoctorServiceMapping::class,'doctor_id','doctor_id')->with('clinicservice');
+        return $this->hasMany(DoctorServiceMapping::class, 'doctor_id', 'doctor_id')->with('clinicservice');
     }
     public function doctorclinic()
     {
-        return $this->hasMany(DoctorClinicMapping::class, 'doctor_id','doctor_id');
+        return $this->hasMany(DoctorClinicMapping::class, 'doctor_id', 'doctor_id');
     }
 
     public function doctorSessions()
     {
-        return $this->hasMany(DoctorSession::class,'doctor_id','doctor_id');
+        return $this->hasMany(DoctorSession::class, 'doctor_id', 'doctor_id');
     }
 
     public function doctorReviews()
     {
-        return $this->hasMany(DoctorRating::class, 'doctor_id','doctor_id');
+        return $this->hasMany(DoctorRating::class, 'doctor_id', 'doctor_id');
     }
     public function doctorDocuments()
     {
-        return $this->hasMany(DoctorDocument::class, 'doctor_id','doctor_id');
+        return $this->hasMany(DoctorDocument::class, 'doctor_id', 'doctor_id');
     }
 
     public function doctorCommission()
     {
-        return $this->hasMany(EmployeeCommission::class, 'employee_id','doctor_id');
+        return $this->hasMany(EmployeeCommission::class, 'employee_id', 'doctor_id');
     }
 
-    public function scopeCheckMultivendor($query){
-        if(multiVendor() == "0") {
-            $query = $query->where('status',1)->whereHas('vendor', function ($q){
-                $q->whereIn('user_type', ['admin','demo_admin']);
+    public function scopeCheckMultivendor($query)
+    {
+        if (multiVendor() == "0") {
+            $query = $query->where('status', 1)->whereHas('vendor', function ($q) {
+                $q->whereIn('user_type', ['admin', 'demo_admin']);
             });
-        }
-        else{
-            $query = $query->where('status',1);
+        } else {
+            $query = $query->where('status', 1);
         }
     }
 
     public function scopeSetRole($query, $user)
     {
-       $user_id = $user->id;
-       
-       if (auth()->user()->hasRole(['admin', 'demo_admin'])) {
-           if (multiVendor() == "0") {
+        $user_id = $user->id;
 
-            $user_ids = User::role(['admin', 'demo_admin'])->pluck('id');
-            $query = $query->whereIn('vendor_id', $user_ids);
-           }
-           return $query; 
-       }       
-       
-       if($user->hasRole('vendor')) {  
+        if (auth()->user()->hasRole(['admin', 'demo_admin'])) {
+            if (multiVendor() == "0") {
 
-           $query=$query->where('vendor_id',  $user_id);
-
-           return $query; 
+                $user_ids = User::role(['admin', 'demo_admin'])->pluck('id');
+                $query = $query->whereIn('vendor_id', $user_ids);
+            }
+            return $query;
         }
 
-        if(auth()->user()->hasRole('doctor')) {
+        if ($user->hasRole('vendor')) {
 
+            $query = $query->where('vendor_id', $user_id);
 
-           $query=$query->where('doctor_id',$user_id);
-
-           return $query;
-        
+            return $query;
         }
 
-        if(auth()->user()->hasRole('receptionist')){
+        if (auth()->user()->hasRole('doctor')) {
 
-            $Receptionist=Receptionist::where('receptionist_id',$user_id)->first();
 
-            $vendorId=$Receptionist->vendor_id;
-            $clinic_id=$Receptionist->clinic_id;
+            $query = $query->where('doctor_id', $user_id);
 
-            if(multiVendor() == "0"){
+            return $query;
+
+        }
+
+        if (auth()->user()->hasRole('receptionist')) {
+
+            $Receptionist = Receptionist::where('receptionist_id', $user_id)->first();
+
+            $vendorId = $Receptionist->vendor_id;
+            $clinic_id = $Receptionist->clinic_id;
+
+            if (multiVendor() == "0") {
 
                 $query->where('vendor_id', $vendorId)->with('doctorclinic')->whereHas('doctorclinic', function ($query) use ($clinic_id) {
                     $query->where('clinic_id', $clinic_id);
-                 });
+                });
 
-             }else{
+            } else {
 
-                  $query->with('doctorclinic')->whereHas('doctorclinic', function ($query) use ($clinic_id) {
-                      $query->where('clinic_id', $clinic_id);
-                   });
-              
-               }
+                $query->with('doctorclinic')->whereHas('doctorclinic', function ($query) use ($clinic_id) {
+                    $query->where('clinic_id', $clinic_id);
+                });
+
+            }
             // $query = $query->with('doctorService')->whereHas('doctorService', function ($query) use ($clinic_id) {
             //             $query->where('clinic_id', $clinic_id);
             //          });
-               return $query;
+            return $query;
         }
 
 
@@ -160,5 +160,5 @@ class Doctor extends BaseModel
     }
 
 
-    
+
 }

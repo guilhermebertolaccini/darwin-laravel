@@ -4,7 +4,7 @@ namespace Modules\FAQ\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\FAQ\Database\factories\FaqsFactory;
+// use Modules\FAQ\Database\factories\FaqsFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Faqs extends Model
@@ -17,8 +17,8 @@ class Faqs extends Model
      */
     protected $fillable = ['question', 'answer', 'status']; // Ensure all relevant attributes are included
 
-    protected static function newFactory(): FaqsFactory
-    {
-        return \Modules\FAQ\database\factories\FAQFactory::new();
-    }
+    // protected static function newFactory(): FaqsFactory
+    // {
+    //     return \Modules\FAQ\database\factories\FAQFactory::new();
+    // }
 }
