@@ -15,15 +15,15 @@ use Modules\Clinic\Models\Clinics;
 use Modules\Clinic\Models\ClinicsCategory;
 use Modules\Clinic\Models\SystemService;
 use Modules\Clinic\Models\ClinicsService;
-use Modules\Pharma\Models\Supplier;
-use Modules\Pharma\Models\SupplierType;
+// use Modules\Pharma\Models\Supplier;
+// use Modules\Pharma\Models\SupplierType;
 use DB;
 use Illuminate\Support\Facades\Cache;
 use Modules\Appointment\Models\EncounterPrescription;
-use Modules\Pharma\Models\Manufacturer;
-use Modules\Pharma\Models\Medicine;
-use Modules\Pharma\Models\MedicineCategory;
-use Modules\Pharma\Models\MedicineForm;
+// use Modules\Pharma\Models\Manufacturer;
+// use Modules\Pharma\Models\Medicine;
+// use Modules\Pharma\Models\MedicineCategory;
+// use Modules\Pharma\Models\MedicineForm;
 use App\Models\Setting;
 use Modules\Commission\Models\Commission;
 use Carbon\Carbon;
@@ -74,11 +74,11 @@ class SearchController extends Controller
 
             case 'clinic_admin':
                 $items = User::where(function ($query) {
-            $query->role('vendor')
-                  ->orWhereHas('roles', function ($q) {
-                      $q->where('name', 'admin');
-                  });
-            })->select('id', \DB::raw("CONCAT(first_name,' ',last_name) AS text"));
+                    $query->role('vendor')
+                        ->orWhereHas('roles', function ($q) {
+                            $q->where('name', 'admin');
+                        });
+                })->select('id', \DB::raw("CONCAT(first_name,' ',last_name) AS text"));
 
                 if ($keyword != '') {
                     $items->where(\DB::raw("CONCAT(first_name, ' ', last_name)"), 'LIKE', '%' . $keyword . '%');
@@ -90,8 +90,8 @@ class SearchController extends Controller
             case 'country':
 
                 $items = Country::where('status', 1)->select('id', 'name as text');
-                
-                
+
+
                 if ($keyword != '') {
 
                     $items->where('name', 'LIKE', '%' . $keyword . '%');
@@ -103,7 +103,7 @@ class SearchController extends Controller
             case 'state':
 
                 $items = State::where('status', 1)->select('id', 'name as text');
-                
+
                 if ($sub_type != null) {
 
                     $items = State::where('country_id', $sub_type)->where('status', 1)->select('id', 'name as text');
@@ -120,9 +120,9 @@ class SearchController extends Controller
             case 'city':
 
                 $items = City::where('status', 1)->select('id', 'name as text');
-                
+
                 if ($sub_type != null) {
-                    
+
                     $items = City::where('state_id', $sub_type)->where('status', 1)->select('id', 'name as text');
                 }
 
@@ -136,7 +136,7 @@ class SearchController extends Controller
 
             case 'encounter_problem':
 
-                $items =  $query = Constant::where('type', 'encounter_problem');
+                $items = $query = Constant::where('type', 'encounter_problem');
 
 
                 if ($keyword != '') {
@@ -150,7 +150,7 @@ class SearchController extends Controller
 
             case 'encounter_observations':
 
-                $items =  $query = Constant::where('type', 'encounter_observations');
+                $items = $query = Constant::where('type', 'encounter_observations');
 
                 if ($keyword != '') {
 
@@ -163,7 +163,7 @@ class SearchController extends Controller
 
             case 'encounter_prescription':
 
-                $items =  $query = EncounterPrescription::select('id', 'name');
+                $items = $query = EncounterPrescription::select('id', 'name');
 
                 if ($keyword != '') {
 
@@ -398,7 +398,7 @@ class SearchController extends Controller
                 $i = 0;
                 foreach ($items as $timeFormat) {
                     $data[$i] = [
-                        'id' =>  $timeFormat['format'],
+                        'id' => $timeFormat['format'],
                         'text' => $timeFormat['time'],
                     ];
 
@@ -479,12 +479,12 @@ class SearchController extends Controller
                 }
 
                 $items = $items->limit(50)->get();
-                $items = $items->map(function($item){
-                        return [
-                            'id' => $item->contact_number,
-                            'text' => $item->contact_number
-                        ];
-                    });
+                $items = $items->map(function ($item) {
+                    return [
+                        'id' => $item->contact_number,
+                        'text' => $item->contact_number
+                    ];
+                });
 
                 return $items;
                 break;

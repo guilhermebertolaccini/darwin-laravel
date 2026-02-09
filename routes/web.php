@@ -14,7 +14,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RolePermission;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SearchController;
-use Modules\Pharma\Http\Controllers\Backend\PharmaController;
+// use Modules\Pharma\Http\Controllers\Backend\PharmaController;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolidayController;
@@ -78,12 +78,10 @@ Route::get('/home', function () {
     } else if (auth()->user()->hasRole('user')) {
 
         return redirect(RouteServiceProvider::USER_LOGIN_REDIRECT);
-    } else if (auth()->user()->hasRole('pharma')){
+    } else if (auth()->user()->hasRole('pharma')) {
 
         return redirect(RouteServiceProvider::PHARMA_LOGIN_REDIRECT);
-    }
-
-    else {
+    } else {
         return redirect(RouteServiceProvider::HOME);
     }
 })->middleware('auth');
@@ -121,11 +119,11 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
         Route::resource('module', ModuleController::class);
 
         /*
-          *
-          *  Settings Routes
-          *
-          * ---------------------------------------------------------------------
-          */
+         *
+         *  Settings Routes
+         *
+         * ---------------------------------------------------------------------
+         */
         Route::group(['middleware' => ['auth_check']], function () {
             Route::get('settings/{vue_capture?}', [SettingController::class, 'index'])->name('settings')->where('vue_capture', '^(?!storage).*$');
             Route::get('settings-data', [SettingController::class, 'index_data']);
@@ -136,11 +134,11 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
         });
 
         /*
-        *
-        *  Notification Routes
-        *
-        * ---------------------------------------------------------------------
-        */
+         *
+         *  Notification Routes
+         *
+         * ---------------------------------------------------------------------
+         */
         Route::group(['prefix' => 'notifications', 'as' => 'notifications.'], function () {
             Route::get('/', [NotificationsController::class, 'index'])->name('index');
             Route::get('/markAllAsRead', [NotificationsController::class, 'markAllAsRead'])->name('markAllAsRead');
@@ -169,11 +167,11 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
         });
 
         /*
-        *
-        *  Backup Routes
-        *
-        * ---------------------------------------------------------------------
-        */
+         *
+         *  Backup Routes
+         *
+         * ---------------------------------------------------------------------
+         */
         Route::group([
             'prefix' => 'backups',
             'as' => 'backups.',
@@ -209,11 +207,11 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
     });
 
     /*
-    *
-    * Backend Routes
-    * These routes need view-backend permission
-    * --------------------------------------------------------------------
-    */
+     *
+     * Backend Routes
+     * These routes need view-backend permission
+     * --------------------------------------------------------------------
+     */
     Route::group(['as' => 'backend.', 'middleware' => ['auth']], function () {
         /**
          * Backend Dashboard
@@ -227,12 +225,12 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
         Route::get('/get-clinic-appointments', [BackendController::class, 'getClinicAppointments'])->name('get-clinic-appointments');
         Route::get('/vendor-dashboard', [BackendController::class, 'vendorDashboard'])->name('vendor-dashboard');
         Route::get('/receptionist-dashboard', [BackendController::class, 'receptionistDashboard'])->name('receptionist-dashboard');
-        if (checkPlugin('pharma') == 'active' && class_exists(PharmaController::class)) {
-            Route::middleware(['pharmaStatus'])->group(function () {
-                Route::get('/pharma-dashboard', [PharmaController::class, 'pharmaDashboard'])->name('pharma-dashboard');
-                Route::get('/pharma-dashboard/daterange/{daterange}', [PharmaController::class, 'pharmaDashboardDaterange'])->name('pharma-dashboard-daterange');
-            });
-        }
+        // if (checkPlugin('pharma') == 'active' && class_exists(PharmaController::class)) {
+        //     Route::middleware(['pharmaStatus'])->group(function () {
+        //         Route::get('/pharma-dashboard', [PharmaController::class, 'pharmaDashboard'])->name('pharma-dashboard');
+        //         Route::get('/pharma-dashboard/daterange/{daterange}', [PharmaController::class, 'pharmaDashboardDaterange'])->name('pharma-dashboard-daterange');
+        //     });
+        // }
         Route::post('set-current-service-providers/{service_provider_id}', [BackendController::class, 'setCurrentServiceProvider'])->name('set-current-service-provider');
         Route::post('reset-service-providers', [BackendController::class, 'resetServiceProvider'])->name('reset-service-provider');
         Route::get('google-auth', [BackendController::class, 'googleAuth'])->name('google-auth');
@@ -253,11 +251,11 @@ Route::group(['prefix' => 'app', 'middleware' => ['auth', 'auth_check']], functi
             Route::get('dashboard', [BackendController::class, 'index'])->name('dashboard');
 
             /*
-            *
-            *  Users Routes
-            *
-            * ---------------------------------------------------------------------
-            */
+             *
+             *  Users Routes
+             *
+             * ---------------------------------------------------------------------
+             */
             Route::group(['prefix' => 'users', 'as' => 'users.'], function () {
                 Route::get('user-list', [UserController::class, 'user_list'])->name('user_list');
                 Route::get('emailConfirmationResend/{id}', [UserController::class, 'emailConfirmationResend'])->name('emailConfirmationResend');

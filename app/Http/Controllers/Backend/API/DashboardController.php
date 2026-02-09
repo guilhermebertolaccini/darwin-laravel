@@ -26,8 +26,8 @@ use Modules\Slider\Models\Slider;
 use Modules\Slider\Transformers\SliderResource;
 use Carbon\Carbon;
 use Modules\Clinic\Models\ClinicServiceMapping;
-use Modules\Pharma\Models\Medicine;
-use Modules\Pharma\Models\Supplier;
+// use Modules\Pharma\Models\Medicine;
+// use Modules\Pharma\Models\Supplier;
 use Modules\Appointment\Models\PatientEncounter;
 use App\Http\Resources\PatientEncounterResource;
 use Modules\Appointment\Models\EncounterPrescription;
@@ -38,51 +38,51 @@ use Modules\FrontendSetting\Models\FrontendSetting;
 
 class DashboardController extends Controller
 {
-     use  ClinicTrait;
+    use ClinicTrait;
 
-     public function DashboardDetail(Request $request)
-     {
+    public function DashboardDetail(Request $request)
+    {
         $user = User::where('id', $request->user_id)->first();
-         $data = $request->all();
+        $data = $request->all();
 
-          $clincs = Clinics::with('specialty','countries','states','cities',)->where('status', 1)->orderBy('updated_at','desc')->take(6)->get();
+        $clincs = Clinics::with('specialty', 'countries', 'states', 'cities', )->where('status', 1)->orderBy('updated_at', 'desc')->take(6)->get();
         //   $category = ClinicsCategory::where('status', 1)->get();
-          // Only show categories that are stored in the 'category_id' field of the footer-setting in FrontendSetting
-          $category = collect();
-          $setting = FrontendSetting::where('type', 'footer-setting')->first();
-          if ($setting && $setting->value) {
-              $config = json_decode($setting->value, true);
-              // Check if 'category_id' exists and is an array
-              if (isset($config['category_id']) && is_array($config['category_id']) && count($config['category_id']) > 0) {
-                  $category = ClinicsCategory::whereIn('id', $config['category_id'])
-                  ->get();
+        // Only show categories that are stored in the 'category_id' field of the footer-setting in FrontendSetting
+        $category = collect();
+        $setting = FrontendSetting::where('type', 'footer-setting')->first();
+        if ($setting && $setting->value) {
+            $config = json_decode($setting->value, true);
+            // Check if 'category_id' exists and is an array
+            if (isset($config['category_id']) && is_array($config['category_id']) && count($config['category_id']) > 0) {
+                $category = ClinicsCategory::whereIn('id', $config['category_id'])
+                    ->get();
                 //   dd($category);
-              }
-          }
+            }
+        }
         //    dd($category);
 
-          $service = ClinicsService::CheckMultivendor()->with('category', 'sub_category', 'vendor')->where('status', 1)->orderBy('updated_at','desc')->take(6)->get();
-          $appointment = Appointment::with('user', 'doctor', 'clinicservice')->where('status', 'pending')->orderBy('updated_at','desc')->take(6)->get();
-          $slider = SliderResource::collection(Slider::where('status', 1)->get());
+        $service = ClinicsService::CheckMultivendor()->with('category', 'sub_category', 'vendor')->where('status', 1)->orderBy('updated_at', 'desc')->take(6)->get();
+        $appointment = Appointment::with('user', 'doctor', 'clinicservice')->where('status', 'pending')->orderBy('updated_at', 'desc')->take(6)->get();
+        $slider = SliderResource::collection(Slider::where('status', 1)->get());
 
-          if($request->filled('latitude') && $request->filled('longitude') && $data['latitude'] !=null && $data['longitude'] !=null ) {
+        if ($request->filled('latitude') && $request->filled('longitude') && $data['latitude'] != null && $data['longitude'] != null) {
 
-              $clincs = $this->getNearestclinic($data['latitude'], $data['longitude']);
-              $clincs->take(6);
-            }
+            $clincs = $this->getNearestclinic($data['latitude'], $data['longitude']);
+            $clincs->take(6);
+        }
 
-            $appointment=[];
+        $appointment = [];
 
-            if($request->has('user_id') && $request->user_id){
+        if ($request->has('user_id') && $request->user_id) {
 
-                $appointment = Appointment::where('user_id',$request->user_id)->with('user', 'doctor', 'clinicservice')->where('status', 'pending')->where('start_date_time', '>', now()->startOfDay())->orderBy('updated_at','desc')->take(6)->get();
+            $appointment = Appointment::where('user_id', $request->user_id)->with('user', 'doctor', 'clinicservice')->where('status', 'pending')->where('start_date_time', '>', now()->startOfDay())->orderBy('updated_at', 'desc')->take(6)->get();
 
-            }
+        }
         $all_unread_count = isset($user->unreadNotifications) ? $user->unreadNotifications->count() : 0;
 
 
         $sectionData = [];
-        $sectionKeys = ['section_1', 'section_2', 'section_3', 'section_4', 'section_5', 'section_6', 'section_7','section_8', 'section_9'];
+        $sectionKeys = ['section_1', 'section_2', 'section_3', 'section_4', 'section_5', 'section_6', 'section_7', 'section_8', 'section_9'];
 
         foreach ($sectionKeys as $key) {
             $section = FrontendSetting::where('key', $key)->first();
@@ -90,11 +90,11 @@ class DashboardController extends Controller
         }
 
         $sectionOne = $sectionData['section_1'] ?? [];
-        $sectionOneData=[];
-        if($sectionOne['section_1'] == 0) {
-           $sectionOneData = [];
-        }else{
-             $sectionOneData = [
+        $sectionOneData = [];
+        if ($sectionOne['section_1'] == 0) {
+            $sectionOneData = [];
+        } else {
+            $sectionOneData = [
                 'title' => $sectionOne['title'] ?? '',
                 'enable_search' => $sectionOne['enable_search'],
                 'instant_link' => $sectionOne['instant_link'] ?? [],
@@ -104,23 +104,22 @@ class DashboardController extends Controller
 
         $sectionPopularCategories = $sectionData['section_2'] ?? [];
         $popularCategories = collect();
-        if($sectionPopularCategories['section_2']  == 0) {
+        if ($sectionPopularCategories['section_2'] == 0) {
             $categoryIds = [];
         } else {
             $categoryIds = $sectionPopularCategories['category_id'] ?? [];
         }
         if (is_array($categoryIds) && !empty($categoryIds)) {
-                $popularCategories = ClinicsCategory::whereIn('id', $categoryIds)->get();
+            $popularCategories = ClinicsCategory::whereIn('id', $categoryIds)->get();
         }
 
         $sectionPopularDoctors = $sectionData['section_6'] ?? [];
 
         $popularDoctors = collect();
 
-        if($sectionPopularDoctors['section_6']  == 0) {
+        if ($sectionPopularDoctors['section_6'] == 0) {
             $doctorIds = [];
-        }
-        else{
+        } else {
             $doctorIds = $sectionPopularDoctors['doctor_id'] ?? [];
         }
 
@@ -159,7 +158,7 @@ class DashboardController extends Controller
         // Perfect Clinics
         $sectionPerfectClinics = $sectionData['section_5'] ?? [];
 
-        if ( $sectionPerfectClinics['section_5'] == 0) {
+        if ($sectionPerfectClinics['section_5'] == 0) {
             $clinicIds = [];
         } else {
             $clinicIds = $sectionPerfectClinics['clinic_id'] ?? [];
@@ -211,12 +210,12 @@ class DashboardController extends Controller
 
 
 
-         return response()->json([
-             'status' => true,
-             'data' => $responseData,
-             'message' => __('messages.dashboard_detail'),
-         ], 200);
-     }
+        return response()->json([
+            'status' => true,
+            'data' => $responseData,
+            'message' => __('messages.dashboard_detail'),
+        ], 200);
+    }
 
 
     public function VendorDashboardDetail(Request $request)
@@ -224,53 +223,53 @@ class DashboardController extends Controller
         $user = User::where('id', $request->vendor_id)->first();
         $vendor_id = $request->has('vendor_id') ? $request->vendor_id : Auth::id();
 
-        $clinic_count=Clinics::SetVendor()->where('status', 1)->count();
-        $service_count=ClinicsService::SetVendor()->where('status', 1)->count();
+        $clinic_count = Clinics::SetVendor()->where('status', 1)->count();
+        $service_count = ClinicsService::SetVendor()->where('status', 1)->count();
         $total_appoinment = Appointment::with('cliniccenter')
-                            ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
-                                $query->where('vendor_id', $vendor_id);
-                            })->count();
+            ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
+                $query->where('vendor_id', $vendor_id);
+            })->count();
 
         // $total_payout = EmployeeEarning::where('employee_id', $vendor_id)->sum('commission_amount');
         $total_earning = CommissionEarning::where('employee_id', $vendor_id)->where('commission_status', '!=', 'pending')->sum('commission_amount');
 
         $total_doctors = Doctor::where('vendor_id', $vendor_id)->where('status', 1)->count();
 
-        $clincs = Clinics::SetVendor()->with('specialty','countries','states','cities',)->where('status', 1)->orderBy('updated_at','desc')->take(6)->get();
+        $clincs = Clinics::SetVendor()->with('specialty', 'countries', 'states', 'cities', )->where('status', 1)->orderBy('updated_at', 'desc')->take(6)->get();
 
         $appointment = Appointment::with('cliniccenter')
-                        ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
-                            $query->where('vendor_id', $vendor_id);
-                        })
-                        ->whereIn('status', ['pending', 'confirmed'])
-                        ->where('start_date_time', '>', now()->startOfDay())
-                        ->orderBy('updated_at', 'desc')
-                        ->take(6)
-                        ->get();
+            ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
+                $query->where('vendor_id', $vendor_id);
+            })
+            ->whereIn('status', ['pending', 'confirmed'])
+            ->where('start_date_time', '>', now()->startOfDay())
+            ->orderBy('updated_at', 'desc')
+            ->take(6)
+            ->get();
         $totalappointment_customer = Appointment::with(['cliniccenter', 'clinicservice'])
-                                    ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
-                                        $query->where('vendor_id', $vendor_id);
-                                    })
-                                    ->distinct('user_id')->count();
+            ->whereHas('cliniccenter', function ($query) use ($vendor_id) {
+                $query->where('vendor_id', $vendor_id);
+            })
+            ->distinct('user_id')->count();
         $all_unread_count = isset($user->unreadNotifications) ? $user->unreadNotifications->count() : 0;
         $responseData = [
 
-             'vendor_total_clinic'=> $clinic_count,
-             'vendor_total_service'=> $service_count,
-             'vendor_total_appoinment'=> $total_appoinment,
+            'vendor_total_clinic' => $clinic_count,
+            'vendor_total_service' => $service_count,
+            'vendor_total_appoinment' => $total_appoinment,
             //  'vendor_total_payout'=> $total_payout,
-             'vendor_total_earning'=>$total_earning,
-             'vendor_total_doctors' => $total_doctors,
-             'vendor_total_patient' => $totalappointment_customer,
-             'upcoming_appointment' => AppointmentResource::collection($appointment),
-             'clinics' => ClinicsResource::collection($clincs),
-             'notification_count' => $all_unread_count,
+            'vendor_total_earning' => $total_earning,
+            'vendor_total_doctors' => $total_doctors,
+            'vendor_total_patient' => $totalappointment_customer,
+            'upcoming_appointment' => AppointmentResource::collection($appointment),
+            'clinics' => ClinicsResource::collection($clincs),
+            'notification_count' => $all_unread_count,
         ];
 
         return response()->json([
-             'status' => true,
-             'data' => $responseData,
-             'message' => __('messages.dashboard_detail'),
+            'status' => true,
+            'data' => $responseData,
+            'message' => __('messages.dashboard_detail'),
         ], 200);
     }
 
@@ -284,10 +283,10 @@ class DashboardController extends Controller
         $topSold = EncounterPrescription::whereHas('medicine', function ($query) {
             $query->where('pharma_id', auth()->user()->id);
         })
-        ->whereNull('deleted_at')
-        ->select('medicine_id', DB::raw('COUNT(*) as total_sold'))
-        ->groupBy('medicine_id')
-        ->get();
+            ->whereNull('deleted_at')
+            ->select('medicine_id', DB::raw('COUNT(*) as total_sold'))
+            ->groupBy('medicine_id')
+            ->get();
 
         // Step 1: Get all totals sorted desc
         $sortedTotals = $topSold->pluck('total_sold')->sortDesc()->values();
@@ -317,12 +316,12 @@ class DashboardController extends Controller
             ->whereDate('expiry_date', '>', $today)
             ->count();
         // $toalEarning = CommissionEarning::where('commission_status','unpaid')->where(['user_type'=> 'pharma', 'employee_id' => auth()->user()->id, 'commissionable_type' => PatientEncounter::class])->sum('commission_amount') ?? 0;
-        $toalEarning = CommissionEarning::whereIn('commission_status', ['unpaid', 'paid'])->where(['user_type'=> 'pharma', 'employee_id' => auth()->user()->id, 'commissionable_type' => PatientEncounter::class])->sum('commission_amount') ?? 0;
+        $toalEarning = CommissionEarning::whereIn('commission_status', ['unpaid', 'paid'])->where(['user_type' => 'pharma', 'employee_id' => auth()->user()->id, 'commissionable_type' => PatientEncounter::class])->sum('commission_amount') ?? 0;
 
         $totalRevenue = EncounterPrescriptionBillingDetail::whereHas('encounter', function ($query) {
-                $query->where('pharma_id', auth()->id())->where('prescription_payment_status', 1);
+            $query->where('pharma_id', auth()->id())->where('prescription_payment_status', 1);
         })
-        ->sum('total_amount');
+            ->sum('total_amount');
 
         $topSupplierRaw = DB::table('purchased_orders')
             ->join('medicines', 'purchased_orders.medicine_id', '=', 'medicines.id')
@@ -371,7 +370,7 @@ class DashboardController extends Controller
             'encounterPrescription',
             'user'
         ])
-            ->where('status', 0 )
+            ->where('status', 0)
             ->where('pharma_id', $user->id)
             ->where('clinic_id', $user->clinic_id)
             ->whereDate('encounter_date', Carbon::today())
@@ -389,10 +388,10 @@ class DashboardController extends Controller
 
 
         $responseData = [
-            'pharma_total_medicine'=> $totalMedicine,
-            'pharma_top_medicine'=> $topMedicines,
-            'pharma_expired_medicine'=> $expiredMedicineCount,
-            'pharma_low_stock_medicine'=>$lowStockMeidcineCount,
+            'pharma_total_medicine' => $totalMedicine,
+            'pharma_top_medicine' => $topMedicines,
+            'pharma_expired_medicine' => $expiredMedicineCount,
+            'pharma_low_stock_medicine' => $lowStockMeidcineCount,
             'pharma_total_earning' => $toalEarning,
             'pharma_total_revenue' => $totalRevenue,
             'top_suppliers' => $topSuppliers,
@@ -400,9 +399,9 @@ class DashboardController extends Controller
         ];
 
         return response()->json([
-                'status' => true,
-                'data' => $responseData,
-                'message' => __('messages.dashboard_detail'),
+            'status' => true,
+            'data' => $responseData,
+            'message' => __('messages.dashboard_detail'),
         ], 200);
     }
 
@@ -475,15 +474,15 @@ class DashboardController extends Controller
         //  $totalearning = CommissionEarning::where('employee_id', $doctor_id)->where('commission_status', '!=', 'pending')->sum('commission_amount');
 
         $doctorServices = DoctorServiceMapping::where('clinic_id', $clinic_id)
-                                      ->where('doctor_id', $doctor_id)
-                                      ->pluck('service_id');
+            ->where('doctor_id', $doctor_id)
+            ->pluck('service_id');
 
         $total_service = $doctorServices->count();
         $service_ids = $doctorServices->toArray();
 
-        $services = ClinicsService::CheckMultivendor()->with('category', 'sub_category', 'vendor')->whereIn('id', $service_ids)->where('status', 1)->orderBy('updated_at','desc')->take(5)->get();
+        $services = ClinicsService::CheckMultivendor()->with('category', 'sub_category', 'vendor')->whereIn('id', $service_ids)->where('status', 1)->orderBy('updated_at', 'desc')->take(5)->get();
         $services = ServiceResource::collection($services);
-        $upcoming_appointment = $appointment->where('doctor_id', $doctor_id)->where('start_date_time', '>=', now()->startOfDay())->orderBy('updated_at','desc')->get();
+        $upcoming_appointment = $appointment->where('doctor_id', $doctor_id)->where('start_date_time', '>=', now()->startOfDay())->orderBy('updated_at', 'desc')->get();
         // dd($user);
 
         $all_unread_count = isset($user->unreadNotifications) ? $user->unreadNotifications->count() : 0;
@@ -496,13 +495,13 @@ class DashboardController extends Controller
             'doctor_services' => $services,
             'upcoming_appointment' => AppointmentResource::collection($upcoming_appointment),
             'notification_count' => $all_unread_count,
-         ];
+        ];
 
-         return response()->json([
-             'status' => true,
-             'data' => $responseData,
-             'message' => __('messages.dashboard_detail'),
-         ], 200);
+        return response()->json([
+            'status' => true,
+            'data' => $responseData,
+            'message' => __('messages.dashboard_detail'),
+        ], 200);
     }
 
     public function receptionistDashboardDetail(Request $request)
@@ -518,26 +517,26 @@ class DashboardController extends Controller
         $totalassigndoctor = 0;
         $upcoming_appointment = [];
         $receptionist_clinic = [];
-        if($clinic_id->isNotEmpty()){
+        if ($clinic_id->isNotEmpty()) {
             $appointment = Appointment::SetRole(auth()->user());
             $totalappointment = $appointment->where('clinic_id', $clinic_id)->count();
             $totalpatient = User::with('appointment')->whereHas('appointment.cliniccenter', function ($qry) use ($clinic_id) {
                 $qry->where('clinic_id', $clinic_id);
             })->count();
-            $totalearning = $appointment->with('appointmenttransaction')->whereHas('appointmenttransaction', function($q){
-                                $q->where('payment_status' , '!=' , '0');
-                            })
-                                ->where('clinic_id', $clinic_id)
-                                ->selectRaw('SUM(total_amount) as total_amount_sum')
-                                ->first();
+            $totalearning = $appointment->with('appointmenttransaction')->whereHas('appointmenttransaction', function ($q) {
+                $q->where('payment_status', '!=', '0');
+            })
+                ->where('clinic_id', $clinic_id)
+                ->selectRaw('SUM(total_amount) as total_amount_sum')
+                ->first();
 
             $totalassigndoctor = DoctorClinicMapping::Where('clinic_id', $clinic_id)->count();
 
-            $upcoming_appointment = Appointment::SetRole(auth()->user())->where('clinic_id', $clinic_id)->where('start_date_time', '>', now()->startOfDay())->orderBy('updated_at','desc')->get();
-            $receptionist_clinic = Clinics::with('specialty','countries','states','cities',)->where('status', 1)->orderBy('updated_at','desc')->where('id', $clinic_id)->get();
-            $totalservice = ClinicsService::with('ClinicServiceMapping')->whereHas('ClinicServiceMapping', function($q) use($clinic_id){
+            $upcoming_appointment = Appointment::SetRole(auth()->user())->where('clinic_id', $clinic_id)->where('start_date_time', '>', now()->startOfDay())->orderBy('updated_at', 'desc')->get();
+            $receptionist_clinic = Clinics::with('specialty', 'countries', 'states', 'cities', )->where('status', 1)->orderBy('updated_at', 'desc')->where('id', $clinic_id)->get();
+            $totalservice = ClinicsService::with('ClinicServiceMapping')->whereHas('ClinicServiceMapping', function ($q) use ($clinic_id) {
                 $q->where('clinic_id', $clinic_id);
-            })->orderBy('updated_at','desc')->count();
+            })->orderBy('updated_at', 'desc')->count();
         }
         $all_unread_count = isset($user->unreadNotifications) ? $user->unreadNotifications->count() : 0;
         $responseData = [
@@ -550,12 +549,12 @@ class DashboardController extends Controller
             'receptionist_clinic' => ClinicsResource::collection($receptionist_clinic),
             'receptionist_total_service_count' => $totalservice,
             'notification_count' => $all_unread_count,
-         ];
+        ];
 
-         return response()->json([
-             'status' => true,
-             'data' => $responseData,
-             'message' => __('messages.dashboard_detail'),
-         ], 200);
+        return response()->json([
+            'status' => true,
+            'data' => $responseData,
+            'message' => __('messages.dashboard_detail'),
+        ], 200);
     }
 }
